@@ -14,14 +14,14 @@ export class PasswordsService {
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get('http://localhost/api/password');
+    return this.http.get('http://ec2-13-59-94-151.us-east-2.compute.amazonaws.com/api/password');
   }
 
   add(pass: Password) {
     pass.website = this.encValue(pass.website);
     pass.password = this.encValue(pass.password);
     pass.userName = this.encValue(pass.userName);
-    return this.http.post('http://localhost/api/password', pass);
+    return this.http.post('http://ec2-13-59-94-151.us-east-2.compute.amazonaws.com/api/password', pass);
   }
 
   unencrypt() {
