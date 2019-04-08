@@ -15,7 +15,7 @@ export class AuthService {
   }
 
   login(email, password) {
-    return this.http.post('http://localhost/api/auth', { email, password });
+    return this.http.post('http://ec2-13-59-94-151.us-east-2.compute.amazonaws.com/api/auth', { email, password });
   }
 
   logout() {
@@ -24,10 +24,10 @@ export class AuthService {
   }
 
   validateToken() {
-    return this.http.get('http://localhost/api/auth/validate');
+    return this.http.get('http://ec2-13-59-94-151.us-east-2.compute.amazonaws.com/api/auth/validate');
   }
 
   register(user) {
-    return this.http.post('http://localhost/api/auth/register', user);
+    return this.http.post('http://ec2-13-59-94-151.us-east-2.compute.amazonaws.com/api/auth/register', user);
   }
 }
