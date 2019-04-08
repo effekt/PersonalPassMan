@@ -1,0 +1,13 @@
+{
+  "name": "PPM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd app && npm install && ng build && cd .. && cd server && npm install",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

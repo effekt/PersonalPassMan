@@ -1,0 +1,11 @@
+{
+    "development": {
+        "port": 80,
+        "api": "/api/",
+        "JWT_SECRET": "de_BV$I6PWNAk58C"
+    },
+    "production": {
+        "port": 80,
+        "api": "/api/"
+    }
+}
