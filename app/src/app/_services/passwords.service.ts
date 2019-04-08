@@ -26,14 +26,23 @@ export class PasswordsService {
 
   unencrypt() {
     this.unPasses = this.encPasses;
-    try {
-      this.unPasses = this.encPasses.map(pass => {return {
-        website: CryptoJS.AES.decrypt(pass.website, this.encKey).toString(CryptoJS.enc.Utf8),
-        userName: CryptoJS.AES.decrypt(pass.userName, this.encKey).toString(CryptoJS.enc.Utf8),
-        password: CryptoJS.AES.decrypt(pass.password, this.encKey).toString(CryptoJS.enc.Utf8),
-        createdOn: pass.createdOn
-      }});
-    } catch(ex) {}
+    this.unPasses = this.encPasses.map(pass => {
+      try {
+        return {
+          website: CryptoJS.AES.decrypt(pass.website, this.encKey).toString(CryptoJS.enc.Utf8),
+          userName: CryptoJS.AES.decrypt(pass.userName, this.encKey).toString(CryptoJS.enc.Utf8),
+          password: CryptoJS.AES.decrypt(pass.password, this.encKey).toString(CryptoJS.enc.Utf8),
+          createdOn: pass.createdOn
+        }
+      } catch(ex) {
+        return {
+          website: pass.website,
+          userName: pass.userName,
+          password: pass.password,
+          createdOn: pass.createdOn
+        }
+      }
+    });
   }
 
   encValue(val) {
