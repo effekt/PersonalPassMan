@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-card class="w-100">
+    <mat-card-content>
+      <div class="card-header d-flex mb-3">
+        <span>Encryption / Unencryption Key</span>
+      </div>
+      <div class="mt-3 d-flex flex-row">
+        <mat-form-field class="w-100">
+            <input matInput type="password" placeholder="Encryption Key" [(ngModel)]="passService.encKey">
+        </mat-form-field>
+        <button mat-stroked-button color="primary" class="ml-3" (click)="passService.unencrypt()">Set Key</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+  

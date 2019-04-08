@@ -1,0 +1,15 @@
+<div id="header">
+  <div class="container flex-row">
+    <a mat-button routerLink="/">PPassMan</a>
+    <span class="spacer"></span>
+    <span *ngIf="!authService.isLoggedIn()">
+      <a mat-button routerLink="/login">Login</a>
+    </span>
+    <span *ngIf="authService.isLoggedIn()">
+      <button mat-button [matMenuTriggerFor]="headerMenu">{{authService.currentUser ? authService.currentUser.firstName : 'User'}}</button>
+      <mat-menu #headerMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="authService.logout()">Logout</button>
+      </mat-menu>
+    </span>
+  </div>
+</div>
