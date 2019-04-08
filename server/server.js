@@ -13,7 +13,7 @@ global.config['root'] = __dirname;
 global.util = require('./core/util');
 require('dotenv').config({ path: '../.env' })
 
-mongoose.connect(`mongodb://ppm:ppm1234!@ds133556.mlab.com:33556/ppm`, { useNewUrlParser: true, useFindAndModify: false }, err => {
+mongoose.connect(``, { useNewUrlParser: true, useFindAndModify: false }, err => {
     console.log(err ? 'Could not connect to MongoDB' : 'Successfully connected to MongoDB');
   require('./core/init')();
 });
